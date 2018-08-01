@@ -4,7 +4,7 @@ class NewThoughts extends Component {
     render() {
         return (
             <div className="NewThoughts_master">
-                <h1>Shower Thoughts!</h1>
+                <h1> New Shower Thoughts!</h1>
             </div>
         )
     }
