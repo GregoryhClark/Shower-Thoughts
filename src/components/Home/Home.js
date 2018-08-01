@@ -6,7 +6,12 @@ class Home extends Component {
     render() {
         return (
             <div className="Home_master">
-                <h1>Home Shower Thoughts!</h1>
+            <div className="home_header">
+            <h1>Shower Thoughts!</h1>
+            </div>
+                
+            <a href="/#/dash" className="enter">Enter</a>
+
 
             </div>
         )
