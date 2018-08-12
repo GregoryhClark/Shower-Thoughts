@@ -6,7 +6,6 @@ import NewThought from './components/NewThought/NewThought';
 import Settings from './components/Settings/Settings';
 import Thought from './components/Thought/Thought';
 import TopNav from './components/TopNav/TopNav';
-import axios from 'axios';
 import {HashRouter, Route, Switch} from 'react-router-dom';
 
 class App extends Component {

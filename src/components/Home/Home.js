@@ -11,8 +11,6 @@ class Home extends Component {
             </div>
                 
             <a href="/#/dash" className="enter">Enter</a>
-
-
             </div>
         )
     }

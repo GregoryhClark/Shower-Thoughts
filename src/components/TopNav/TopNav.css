@@ -26,6 +26,9 @@
   .TopNav .icon {
     display: none;
   }
+  .unstyledA {
+    all:inherit;
+  }
   
   @media screen and (max-width: 600px) {
     .TopNav a:not(:first-child) {display: none;}

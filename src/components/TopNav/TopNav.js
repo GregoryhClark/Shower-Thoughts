@@ -1,27 +1,49 @@
-import React, { Component } from 'react';
-import './TopNav.css'
+import React from 'react';
+import { withStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 
-class TopNav extends Component {
-    changeHamburger() {
-        var x = document.getElementById("myTopnav");
-        if (x.className === "TopNav") {
-            x.className += " responsive";
-        } else {
-            x.className = "TopNav";
-        }
-    }
-    render() {
-        return (
-            <div className="TopNav_master">
-                <div className="TopNav" id="myTopnav">
-                <a href="/#/" className="active">Home</a>
-                <a href="/#/dash">Dashboard</a>
-                <a href="/#/settings">Settings</a>
-                <a href="javascript:void(0);" className="icon" onClick={this.changeHamburger}>&#9776;</a>
-                </div>
-                
-            </div>
-        )
-    }
+import TopHamMenu from './TopHamMenu/TopHamMenu';
+import './TopNav.css'
+const styles = {
+    root: {
+        flexGrow: 1,
+    },
+    flex: {
+        flexGrow: 1,
+    },
+    menuButton: {
+        marginLeft: -12,
+        marginRight: 20,
+    },
+};
+
+function TopNav(props) {
+    const { classes } = props;
+
+
+    return (
+        <div className={classes.root}>
+            <AppBar position="static">
+                <Toolbar>
+                    <TopHamMenu />
+                    <Typography variant="title" color="inherit" className={classes.flex}>
+                        Adulting
+          </Typography>
+                    <div className="TopnavButtons">
+                        <Button color="inherit"><a className="unstyledA" href="/#/">Home</a></Button>
+                        <Button color="inherit"><a className="unstyledA" href="/#/dash">Dashbard</a></Button>
+                        <Button color="inherit"><a className="unstyledA" href="/#/settings">Settings</a></Button>
+
+                    </div>
+
+                </Toolbar>
+            </AppBar>
+        </div>
+
+    )
+
 }
-export default (TopNav)
+export default withStyles(styles)(TopNav);
