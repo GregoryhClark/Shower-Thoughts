@@ -4,26 +4,26 @@ var showerThoughts = [{
     body: 'I hope this worked out.'
 }];
 
-var id = showerThoughts.length;
+var id = 1;
 
 module.exports = {
 
-    create: (req, res) => {
+    newThought: (req, res) => {
         const { title, body } = req.body;
         showerThoughts.push({ title, body });
         id++;
         res.status(200).send(showerThoughts);
     },
-    read: (req, res) => {
+    getThoughts: (req, res) => {
         res.status(200).send(showerThoughts);
     },
-    update: (req, res)=>{
+    updateThought: (req, res)=>{
         const updateID = req.params.id;
         let updateIndex = showerThoughts.findIndex(thought => thought.id === updateID)
         showerThoughts[updateIndex] = req.body;
         res.status(200).send(showerThoughts);
     },
-    delete: (req, res) => {
+    deleteThought: (req, res) => {
         const deleteID = req.params.id;
         let deleteIndex = showerThoughts.findIndex(thought => thought.id === deleteID)
         showerThoughts.splice(deleteIndex, 1);

@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Button from '@material-ui/core/Button';
+import './Home.css';
 
 
 
@@ -10,7 +12,7 @@ class Home extends Component {
             <h1>Shower Thoughts!</h1>
             </div>
                 
-            <a href="/#/dash" className="enter">Enter</a>
+            <Button><a href="/#/dash" className="enter">Enter</a></Button>
             </div>
         )
     }
