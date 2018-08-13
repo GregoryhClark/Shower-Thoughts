@@ -1,23 +1,30 @@
-var showerThoughts = [{
-    id: 1,
-    title: 'First Thought',
-    body: 'I hope this worked out.'
-}];
+var showerThoughts = [
+    {
+        id: 1,
+        title: 'First Thought',
+        body: 'I hope this worked out.'
+    },
+    {
+        id: 2,
+        title: 'Second Thought',
+        body: 'I hope this worked out too.'
+    },
+];
 
-var id = 1;
+var id = 3;
 
 module.exports = {
 
     newThought: (req, res) => {
         const { title, body } = req.body;
-        showerThoughts.push({ title, body });
+        showerThoughts.push({ id, title, body });
         id++;
         res.status(200).send(showerThoughts);
     },
     getThoughts: (req, res) => {
         res.status(200).send(showerThoughts);
     },
-    updateThought: (req, res)=>{
+    updateThought: (req, res) => {
         const updateID = req.params.id;
         let updateIndex = showerThoughts.findIndex(thought => thought.id === updateID)
         showerThoughts[updateIndex] = req.body;

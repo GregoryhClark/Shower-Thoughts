@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import NewThoughtDialog from '../Dash/NewThoughtDialog/NewThoughtDialog';
 import axios from 'axios';
+import DeleteIcon from '@material-ui/icons/DeleteOutlined';
+import EditIcon from '@material-ui/icons/EditOutlined';
+import Button from '@material-ui/core/Button';
+import './Dash.css';
 
 class Dash extends Component {
     constructor(){
@@ -15,6 +19,7 @@ class Dash extends Component {
     }
     componentWillMount(){
         axios.get('/api/thoughts').then(thoughts=>{
+            console.log(thoughts.data)
             this.setState({
                 thoughtsArray:thoughts.data
             })
@@ -26,6 +31,8 @@ class Dash extends Component {
                 <div key = {index}>
                 <h1>{thought.title}</h1>
                 <p>{thought.body}</p>
+                <Button><DeleteIcon /></Button>
+                <Button><EditIcon /></Button>
                 </div>
         )
         }) : null;
@@ -35,6 +42,7 @@ class Dash extends Component {
                 <h1>Dash Shower Thoughts!</h1>
                 <NewThoughtDialog />
                 {thoughtsList}
+                
                 
                 
             </div>

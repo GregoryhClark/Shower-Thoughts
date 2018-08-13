@@ -4,12 +4,14 @@ import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
-// import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import axios from 'axios';
 
 class NewThoughtDialog extends Component {
     state = {
         open: false,
+        newTitle:'',
+        newBody:'',
     };
 
     handleClickOpen = () => {
@@ -18,6 +20,11 @@ class NewThoughtDialog extends Component {
 
     handleClose = () => {
         this.setState({ open: false });
+        let newThought={
+            title:this.state.newTitle,
+            body:this.state.newBody
+        }
+        axios.post('/api/thoughts', newThought)
     };
 
     render() {
@@ -31,11 +38,11 @@ class NewThoughtDialog extends Component {
                 >
                     <DialogTitle id="form-dialog-title">New Shower Thought</DialogTitle>
                     <DialogContent>
-                        {/* <DialogContentText>
-                        To subscribe to this website, please enter your email address here. We will send
-                        updates occasionally.
-            </DialogContentText> */}
+
                         <TextField
+                            onChange={(e) => this.setState({
+                                newTitle: e.target.value
+                            })}
                             autoFocus
                             margin="dense"
                             id="newThoughtTitle"
@@ -44,7 +51,9 @@ class NewThoughtDialog extends Component {
                             fullWidth
                         />
                         <TextField
-                            
+                            onChange={(e) => this.setState({
+                                newBody: e.target.value
+                            })}
                             margin="dense"
                             id="newThoughtContent"
                             label="Thought Content"
@@ -58,7 +67,7 @@ class NewThoughtDialog extends Component {
                         <Button onClick={this.handleClose} color="primary">
                             Cancel
             </Button>
-                        <Button onClick={this.handleClose} color="primary">
+                        <Button onClick={(e)=>{this.handleClose(e.target.value)}} color="primary">
                             Save
             </Button>
                     </DialogActions>
