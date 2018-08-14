@@ -9,7 +9,7 @@ class Home extends Component {
         return (
             <div className="Home_master">
             <div className="home_header">
-            <h1>Shower Thoughts!</h1>
+            <h1>Welcome to Shower Thoughts!</h1>
             </div>
                 
             <Button><a href="/#/dash" className="enter">Enter</a></Button>

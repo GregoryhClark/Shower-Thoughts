@@ -30,7 +30,7 @@ function TopNav(props) {
                 <Toolbar>
                     <TopHamMenu />
                     <Typography variant="title" color="inherit" className={classes.flex}>
-                        Adulting
+                        Shower Thoughts
           </Typography>
                     <div className="TopnavButtons">
                         <Button color="inherit"><a className="unstyledA" href="/#/">Home</a></Button>

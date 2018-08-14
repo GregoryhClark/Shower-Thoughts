@@ -1,3 +1,16 @@
 .Dash_master {
    text-align: center;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+.thoughOptions{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.thoughtsList{
+    margin:5px;
+    width:70%;
+    max-width: 550px;
 }

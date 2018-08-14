@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
-// import MenuItem from '@material-ui/core/MenuItem';
+import MenuItem from '@material-ui/core/MenuItem';
 import MenuIcon from '@material-ui/icons/Menu';
 import '../TopNav.css';
 
@@ -37,9 +37,12 @@ class TopHamMenu extends React.Component {
                     open={Boolean(anchorEl)}
                     onClose={this.handleClose}
                 >
-                    <Button color="inherit"><a className="unstyledA" href="/#/">Home</a></Button>
-                    <Button color="inherit"><a className="unstyledA" href="/#/dash">Dashbard</a></Button>
-                    <Button color="inherit"><a className="unstyledA" href="/#/settings">Settings</a></Button>
+                {/* <div className="topHamButtons"> */}
+                    <MenuItem><Button color="inherit" onClick={this.handleClose}><a className="unstyledA" href="/#/">Home</a></Button></MenuItem>
+                    <MenuItem><Button color="inherit" onClick={this.handleClose}><a className="unstyledA" href="/#/dash">Dashbard</a></Button></MenuItem>
+                    <MenuItem><Button color="inherit" onClick={this.handleClose}><a className="unstyledA" href="/#/settings">Settings</a></Button></MenuItem>
+                {/* </div> */}
+
                 </Menu>
             </div>
         );

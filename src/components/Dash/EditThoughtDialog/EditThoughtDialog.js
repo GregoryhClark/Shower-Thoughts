@@ -5,55 +5,58 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import EditIcon from '@material-ui/icons/EditOutlined';
 import axios from 'axios';
-import './NewThoughtDialog.css';
 
-class NewThoughtDialog extends Component {
+class EditThoughtDialog extends Component {
     state = {
         open: false,
-        newTitle: '',
-        newBody: '',
+        newTitle:this.props.title,
+        newBody:this.props.body,
     };
 
     handleClickOpen = () => {
         this.setState({ open: true });
     };
 
-    handleClose = () => {
+    handleClose = (id) => {
         this.setState({ open: false });
-
+        
     };
     handleSave = () => {
-        let newThought = {
-            title: this.state.newTitle,
-            body: this.state.newBody
+        let newThought={
+            id:this.props.id,
+            title:this.state.newTitle,
+            body:this.state.newBody
         }
-        axios.post('/api/thoughts', newThought)
+        axios.put(`/api/thoughts/${this.props.id}`, newThought)
         //Need to refresh page here
-        this.handleClose()
+        console.log(newThought)
+        this.setState({ open: false });
     }
 
     render() {
         return (
-            <div className="NewThoughtDialogMaster">
-                <Button onClick={this.handleClickOpen}>New Shower Thought</Button>
+            <div>
+                <Button onClick={this.handleClickOpen}><EditIcon /></Button>
                 <Dialog
                     open={this.state.open}
                     onClose={this.handleClose}
                     aria-labelledby="form-dialog-title"
                 >
-                    <DialogTitle id="form-dialog-title">New Shower Thought</DialogTitle>
+                    <DialogTitle id="form-dialog-title">Edit Shower Thought</DialogTitle>
                     <DialogContent>
 
                         <TextField
                             onChange={(e) => this.setState({
                                 newTitle: e.target.value
                             })}
-                            autoFocus
+                            
                             margin="dense"
                             id="newThoughtTitle"
                             label="Thought Title"
                             type="string"
+                            defaultValue={this.props.title}
                             fullWidth
                         />
                         <TextField
@@ -64,6 +67,7 @@ class NewThoughtDialog extends Component {
                             id="newThoughtContent"
                             label="Thought Content"
                             type="string"
+                            defaultValue={this.props.body}
                             fullWidth
                             multiline
                             rows={5}
@@ -82,4 +86,4 @@ class NewThoughtDialog extends Component {
         );
     };
 };
-export default (NewThoughtDialog)
+export default (EditThoughtDialog)

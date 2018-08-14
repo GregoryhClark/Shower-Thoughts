@@ -9,9 +9,14 @@ var showerThoughts = [
         title: 'Second Thought',
         body: 'I hope this worked out too.'
     },
+    {
+        id: 3,
+        title: 'Third Thought',
+        body: 'I hope this worked out too.'
+    },
 ];
 
-var id = 3;
+var id = 4;
 
 module.exports = {
 
@@ -26,13 +31,13 @@ module.exports = {
     },
     updateThought: (req, res) => {
         const updateID = req.params.id;
-        let updateIndex = showerThoughts.findIndex(thought => thought.id === updateID)
+        let updateIndex = showerThoughts.findIndex(thought => thought.id == updateID)
         showerThoughts[updateIndex] = req.body;
         res.status(200).send(showerThoughts);
     },
     deleteThought: (req, res) => {
         const deleteID = req.params.id;
-        let deleteIndex = showerThoughts.findIndex(thought => thought.id === deleteID)
+        let deleteIndex = showerThoughts.findIndex(thought => thought.id == deleteID)
         showerThoughts.splice(deleteIndex, 1);
         res.status(200).send(showerThoughts);
     }
