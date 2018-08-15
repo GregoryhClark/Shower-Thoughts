@@ -16,7 +16,6 @@ class DeleteThoughtDialog extends Component {
     handleClickOpen = () => {
         this.setState({ open: true });
     };
-
     handleClose = (id) => {
         this.setState({ open: false });
 
@@ -24,7 +23,6 @@ class DeleteThoughtDialog extends Component {
     handleDelete = () => {
 
         axios.delete(`/api/thoughts/${this.props.id}`)
-        //Need to refresh page here
         this.props.getThoughts()
         this.setState({ open: false });
     }
@@ -54,8 +52,6 @@ class DeleteThoughtDialog extends Component {
             </div>
         )
     }
-
-
 };
 function mapStateToProps(state){
     const showerThoughts = state

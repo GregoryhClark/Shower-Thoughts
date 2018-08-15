@@ -9,8 +9,6 @@ import {getThoughts} from '../../ducks/reducer';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import './Dash.css';
-// import { connect } from 'tls';
-
 
 class Dash extends Component {
     constructor() {
@@ -20,7 +18,6 @@ class Dash extends Component {
         }
     }
     componentWillMount() {
-        // this.getThoughts()
         this.props.getThoughts()
     }
     deleteThought(id) {
@@ -35,13 +32,6 @@ class Dash extends Component {
     editThought(id) {
         axios.put(`/api/thoughts/${id}`)
     }
-    // getThoughts() {
-    //     axios.get('/api/thoughts').then(thoughts => {
-    //         this.setState({
-    //             thoughtsArray: thoughts.data
-    //         })
-    //     })
-    // }
     render() {
         let thoughtsList = this.props.showerThoughts.length > 0 ? this.props.showerThoughts.map((thought, index) => {
             return (
@@ -52,7 +42,6 @@ class Dash extends Component {
                     <p>{thought.body}</p>
                     <div className="thoughOptions">
                         <DeleteThoughtDialog id={thought.id} title={thought.title} body={thought.body} />
-                        {/* <Button value={thought.id} onClick={(e) => this.deleteThought(e.target)}><DeleteIcon/></Button> Clicking the icon doesn't render the thought id. This causes an issue. */}
                         <EditThoughtDialog id={thought.id} title={thought.title} body={thought.body} />
                     </div>
                     </CardContent>

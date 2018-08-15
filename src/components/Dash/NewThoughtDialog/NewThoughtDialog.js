@@ -30,8 +30,10 @@ class NewThoughtDialog extends Component {
             title: this.state.newTitle,
             body: this.state.newBody
         }
-        axios.post('/api/thoughts', newThought)
-        this.props.getThoughts()
+        axios.post('/api/thoughts', newThought).then(()=>{
+            this.props.getThoughts()
+        })
+        
         this.handleClose()
     }
 
