@@ -6,6 +6,8 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import EditIcon from '@material-ui/icons/EditOutlined';
+import {getThoughts} from '../../../ducks/reducer';
+import { connect } from 'react-redux';
 import axios from 'axios';
 
 class EditThoughtDialog extends Component {
@@ -30,8 +32,7 @@ class EditThoughtDialog extends Component {
             body:this.state.newBody
         }
         axios.put(`/api/thoughts/${this.props.id}`, newThought)
-        //Need to refresh page here
-        console.log(newThought)
+        this.props.getThoughts()
         this.setState({ open: false });
     }
 
@@ -86,4 +87,10 @@ class EditThoughtDialog extends Component {
         );
     };
 };
-export default (EditThoughtDialog)
+function mapStateToProps(state) {
+    const {showerThoughts} = state
+    return {
+        showerThoughts
+    }
+}
+export default connect(mapStateToProps, {getThoughts})(EditThoughtDialog)

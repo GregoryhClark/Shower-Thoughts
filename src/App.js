@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import Home from './components/Home/Home';
 import Dash from './components/Dash/Dash';
-import NewThought from './components/NewThought/NewThought';
 import Settings from './components/Settings/Settings';
 import Thought from './components/Thought/Thought';
 import TopNav from './components/TopNav/TopNav';
@@ -17,7 +16,6 @@ class App extends Component {
           <Switch>
             <Route exact path = '/' component={Home}/>
             <Route exact path = '/dash' component={Dash}/>
-            <Route exact path = '/new_thought' component={NewThought}/>
             <Route exact path = '/settings' component={Settings}/>
             <Route exact path = '/thought' component={Thought}/>
             

@@ -5,6 +5,8 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import {getThoughts} from '../../../ducks/reducer';
+import { connect } from 'react-redux';
 import axios from 'axios';
 import './NewThoughtDialog.css';
 
@@ -29,7 +31,7 @@ class NewThoughtDialog extends Component {
             body: this.state.newBody
         }
         axios.post('/api/thoughts', newThought)
-        //Need to refresh page here
+        this.props.getThoughts()
         this.handleClose()
     }
 
@@ -82,4 +84,10 @@ class NewThoughtDialog extends Component {
         );
     };
 };
-export default (NewThoughtDialog)
+function mapStateToProps(state) {
+    const {showerThoughts} = state
+    return {
+        showerThoughts
+    }
+}
+export default connect(mapStateToProps, {getThoughts})(NewThoughtDialog)
