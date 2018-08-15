@@ -40,7 +40,7 @@ class NewThoughtDialog extends Component {
     render() {
         return (
             <div className="NewThoughtDialogMaster">
-                <Button onClick={this.handleClickOpen}>New Shower Thought</Button>
+                <Button variant="contained" color="primary" onClick={this.handleClickOpen}>New Shower Thought</Button>
                 <Dialog
                     open={this.state.open}
                     onClose={this.handleClose}

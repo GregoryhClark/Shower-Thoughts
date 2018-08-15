@@ -22,8 +22,6 @@ const styles = {
 
 function TopNav(props) {
     const { classes } = props;
-
-
     return (
         <div className={classes.root}>
             <AppBar position="static">
@@ -33,10 +31,10 @@ function TopNav(props) {
                         Shower Thoughts
           </Typography>
                     <div className="TopnavButtons">
-                        {/* <Button color="inherit"><a className="unstyledA" href="/#/">Home</a></Button> */}
-                        <a className="unstyledA" href="/#/"><Button color="inherit">Home</Button></a>
-                        <a className="unstyledA" href="/#/dash"><Button color="inherit">Dashboard</Button></a>
-                        <a className="unstyledA" href="/#/about"><Button color="inherit">About</Button></a>
+
+                        <Button color="inherit" href="/#/">Home</Button>
+                        <Button color="inherit" href="/#/dash">Dashboard</Button>
+                        <Button color="inherit" href="/#/about">About</Button>
 
                     </div>
 

@@ -2,20 +2,21 @@ import axios from 'axios';
 
 const initialState = {
     showerThoughts:[],
-    styleingTheme:''
+    // styleingTheme:''
 }
 
 //actionTypes
 const GET_THOUGHTS = 'GET_THOUGHTS';
-const CHANGE_THEME = 'CHANGE_THEME';
+//This will be set up to allow the user to change the color theme of the app. It is still in progress.
+// const CHANGE_THEME = 'CHANGE_THEME';
 
 export default function reducer(state = initialState, action) {
     switch (action.type){
         //cases
         case GET_THOUGHTS + '_FULFILLED':
             return   Object.assign({}, state, {showerThoughts: action.payload});
-        case CHANGE_THEME + '_FULFILLED':
-            return Object.assign({}, state, {styleingTheme: action.payload});
+        // case CHANGE_THEME + '_FULFILLED':
+        //     return Object.assign({}, state, {styleingTheme: action.payload});
 
         default: return state;
     }
@@ -32,9 +33,9 @@ export function getThoughts(){
             payload: showerThoughts
         };
 }
-export function setTheme(theme){
-    return {
-        type: CHANGE_THEME,
-        payload: theme
-    }
-}
+// export function setTheme(theme){
+//     return {
+//         type: CHANGE_THEME,
+//         payload: theme
+//     }
+// }

@@ -1,9 +1,10 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
 import MenuIcon from '@material-ui/icons/Menu';
 import '../TopNav.css';
+import './TopHamMenu.css';
+
 
 class TopHamMenu extends React.Component {
     state = {
@@ -37,12 +38,10 @@ class TopHamMenu extends React.Component {
                     open={Boolean(anchorEl)}
                     onClose={this.handleClose}
                 >
-                {/* <div className="topHamButtons"> */}
-                    <MenuItem><Button color="inherit" onClick={this.handleClose}><a className="unstyledA" href="/#/">Home</a></Button></MenuItem>
-                    <MenuItem><Button color="inherit" onClick={this.handleClose}><a className="unstyledA" href="/#/dash">Dashbard</a></Button></MenuItem>
-                    <MenuItem><Button color="inherit" onClick={this.handleClose}><a className="unstyledA" href="/#/about">About</a></Button></MenuItem>
-                {/* </div> */}
-
+                    <Button color="inherit" onClick={this.handleClose} href="/#/" className="hamItem">Home</Button>
+                    <Button color="inherit" onClick={this.handleClose} href="/#/dash" className="hamItem">Dashboard</Button>
+                    <Button color="inherit" onClick={this.handleClose} href="/#/about" className="hamItem">About</Button>
+               
                 </Menu>
             </div>
         );
