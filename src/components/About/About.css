@@ -1,0 +1,13 @@
+.About_master h1, p{
+    text-align: center;
+    padding:15px;
+}
+.about_list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.about_p{
+    max-width: 500px;
+    margin: auto;
+}

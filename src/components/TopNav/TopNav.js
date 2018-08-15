@@ -33,9 +33,10 @@ function TopNav(props) {
                         Shower Thoughts
           </Typography>
                     <div className="TopnavButtons">
-                        <Button color="inherit"><a className="unstyledA" href="/#/">Home</a></Button>
-                        <Button color="inherit"><a className="unstyledA" href="/#/dash">Dashbard</a></Button>
-                        <Button color="inherit"><a className="unstyledA" href="/#/settings">Settings</a></Button>
+                        {/* <Button color="inherit"><a className="unstyledA" href="/#/">Home</a></Button> */}
+                        <a className="unstyledA" href="/#/"><Button color="inherit">Home</Button></a>
+                        <a className="unstyledA" href="/#/dash"><Button color="inherit">Dashboard</Button></a>
+                        <a className="unstyledA" href="/#/about"><Button color="inherit">About</Button></a>
 
                     </div>
 

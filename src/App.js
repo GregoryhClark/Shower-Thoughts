@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Home from './components/Home/Home';
 import Dash from './components/Dash/Dash';
-import Settings from './components/Settings/Settings';
-import Thought from './components/Thought/Thought';
+import About from './components/About/About';
 import TopNav from './components/TopNav/TopNav';
 import {HashRouter, Route, Switch} from 'react-router-dom';
 
@@ -16,9 +15,7 @@ class App extends Component {
           <Switch>
             <Route exact path = '/' component={Home}/>
             <Route exact path = '/dash' component={Dash}/>
-            <Route exact path = '/settings' component={Settings}/>
-            <Route exact path = '/thought' component={Thought}/>
-            
+            <Route exact path = '/about' component={About}/>
           </Switch>
         </HashRouter>
       </div>

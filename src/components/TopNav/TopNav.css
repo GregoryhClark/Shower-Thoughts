@@ -33,6 +33,10 @@
     display: flex;
     flex-direction: column;
   }
+  .TopnavButtons{
+    display: flex;
+    flex-direction: row;
+  }
   
   @media screen and (max-width: 600px) {
     .TopNav a:not(:first-child) {display: none;}

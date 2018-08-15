@@ -12,7 +12,7 @@ class Home extends Component {
             <h1>Welcome to Shower Thoughts!</h1>
             </div>
                 
-            <Button><a href="/#/dash" className="enter">Enter</a></Button>
+            <a href="/#/dash" className="unstyledA"><Button color="inherit">Enter</Button></a>
             </div>
         )
     }

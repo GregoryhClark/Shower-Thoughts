@@ -1,18 +1,18 @@
 var showerThoughts = [
     {
         id: 1,
-        title: 'First Thought',
-        body: 'I hope this worked out.'
+        title: 'Uninostril',
+        body: 'What if we only had one giant nostril?'
     },
     {
         id: 2,
-        title: 'Second Thought',
-        body: 'I hope this worked out too.'
+        title: 'Sheet Music',
+        body: 'Sheet music is basically just a sound recipe.'
     },
     {
         id: 3,
-        title: 'Third Thought',
-        body: 'I hope this worked out too.'
+        title: 'Sleep',
+        body: 'You have to pretend to sleep in order to sleep.'
     },
 ];
 

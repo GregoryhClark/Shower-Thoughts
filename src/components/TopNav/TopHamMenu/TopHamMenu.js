@@ -40,7 +40,7 @@ class TopHamMenu extends React.Component {
                 {/* <div className="topHamButtons"> */}
                     <MenuItem><Button color="inherit" onClick={this.handleClose}><a className="unstyledA" href="/#/">Home</a></Button></MenuItem>
                     <MenuItem><Button color="inherit" onClick={this.handleClose}><a className="unstyledA" href="/#/dash">Dashbard</a></Button></MenuItem>
-                    <MenuItem><Button color="inherit" onClick={this.handleClose}><a className="unstyledA" href="/#/settings">Settings</a></Button></MenuItem>
+                    <MenuItem><Button color="inherit" onClick={this.handleClose}><a className="unstyledA" href="/#/about">About</a></Button></MenuItem>
                 {/* </div> */}
 
                 </Menu>
